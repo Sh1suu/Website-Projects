@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GavDec Recharge</title>
+    <link rel="stylesheet" href="finalproj.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="logo">
+            <img class="logo-icon" src="images/Logo.png" alt="Game controller icon">
+            <h1>GAV<span class="logo-accent">DEC</span> RECHARGE</h1>
+        </div>
+        
+        <div class="search-container">
+            <input class="search-input" type="text" placeholder="SEARCH GAME CREDITS...">
+            <span class="search-icon">></span>
+        </div>
+        
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">HOME</a>
+            <a href="#products" class="nav-link">PRODUCTS</a>
+            <a href="#services" class="nav-link">SERVICES</a>
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#contact" class="nav-link">CONTACT US</a>
+        </div>
+    </nav>
+    
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2 class="main-heading">
+                    <span class="heading-line">RECHARGE</span>
+                    <span class="heading-line">YOUR GAME.</span>
+                    <span class="heading-line">REIGN</span>
+                    <span class="heading-line">SUPREME!</span>
+                </h2>
+                
+                <div class="taglines">
+                    <p>CHECK OUT OUR <span class="highlight blink-fast">EXCLUSIVE</span> OFFERS</p>
+                    <p>UP TO <span class="highlight">70% DISCOUNT</span> ON SELECTED GAMES</p>
+                    <p>CREDITS <span class="blink">AVAILABLE NOW!</span></p>
+                </div>
+                
+                <img class="dollar-icon" src="images/peso-removebg-preview.png" alt="Dollar sign icon">
+                <div class="scrolling-ticker">
+                    <p>NEW RELEASE: DIABLO IV CREDITS • LIMITED TIME OFFER: 2X BONUS ON FIRST PURCHASE • WEEKLY PROMO: FREE 100 CREDITS WITH $50+ PURCHASE</p>
+                </div>
+            </div>
+        </section>
+
+          <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image-container">
+                    <img id="modalProductImage" src="" alt="Product Image">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalProductTitle"></h2>
+                    <p class="modal-price" id="modalProductPrice"></p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="platform-selector">
+                        <label>PLATFORM:</label>
+                        <select id="platform">
+                            <option value="pc">PC</option>
+                            <option value="mobile">MOBILE</option>
+                            <option value="console">CONSOLE</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart">ADD TO CART</button>
+                    <div class="payment-methods">
+                        <p>ACCEPTED PAYMENT METHODS:</p>
+                        <div class="payment-icons">
+                            <img src="images/gcash.png" alt="GCash">
+                            <img src="images/paypal.png" alt="PayPal">
+                            <img src="images/visa.png" alt="Visa">
+                            <img src="images/master.png" alt="Mastercard">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+        <!-- Featured Products Section -->
+        <section id="products" class="section featured-products">
+            <div class="section-header">
+                <h2 class="section-title cyberpunk-header">FEATURED PRODUCTS</h2>
+                <h3 class="section-subtitle cyberpunk-subheader">TOP-UP & GAME CREDITS</h3>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Valorant game cover" src="images/Valorant.png">
+                    </div>
+                    <p class="product-title">VALORANT POINTS</p>
+                    <p class="product-price">FROM $1.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Genshin Impact game cover" src="images/Genshin.png">
+                    </div>
+                    <p class="product-title">GENSHIN CRYSTALS</p>
+                    <p class="product-price">FROM $4.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Steam Wallet cover" src="images/Steam.png">
+                    </div>
+                    <p class="product-title">STEAM WALLET</p>
+                    <p class="product-price">FROM $5.00</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Mobile Legends game cover" src="images/mobile-legends.png">
+                    </div>
+                    <p class="product-title">MOBILE LEGENDS</p>
+                    <p class="product-price">FROM $1.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="League of Legends game cover" src="images/lol.jpg">
+                    </div>
+                    <p class="product-title">WILD RIFT</p>
+                    <p class="product-price">FROM $4.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Call of Duty game cover" src="images/codm.jpg">
+                    </div>
+                    <p class="product-title">COD: MOBILE</p>
+                    <p class="product-price">FROM $2.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="PUBG Mobile game cover" src="images/pubg-go20ghrcj4ybxhvq.jpg">
+                    </div>
+                    <p class="product-title">PUBG MOBILE</p>
+                    <p class="product-price">FROM $0.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img alt="Fortnite game cover" src="images/fortnite.jpg">
+                    </div>
+                    <p class="product-title">FORTNITE VBUCKS</p>
+                    <p class="product-price">FROM $7.99</p>
+                </div>
+            </div>
+        </section>
+
+        
+       
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="section-header">
+                <h2 class="section-title cyberpunk-header">PREMIUM SERVICES</h2>
+                <h3 class="section-subtitle cyberpunk-subheader">BEYOND TOP-UPS</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">$</div>
+                    <h3>GIFT CARDS & VOUCHERS</h3>
+                    <p>Digital gift cards for all major gaming platforms including Steam, PlayStation Network, Xbox Live, Nintendo eShop, and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">▲</div>
+                    <h3>ELITE PILOT SERVICES</h3>
+                    <p>Professional gamers will play on your account to boost ranks, complete achievements, and farm resources. 100% safe and secure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">♾</div>
+                    <h3>SUBSCRIPTION MANAGEMENT</h3>
+                    <p>Auto-renewal setup for Xbox Game Pass, PlayStation Plus, Nintendo Switch Online, and other gaming subscriptions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">!</div>
+                    <h3>ACCOUNT RECOVERY</h3>
+                    <p>Specialized services to recover lost or hacked gaming accounts across all major platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">★</div>
+                    <h3>ITEM TRADING</h3>
+                    <p>Secure marketplace for trading in-game items, skins, and collectibles with escrow protection.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>PRIORITY DELIVERY</h3>
+                    <p>Instant delivery of game credits and items with our premium network of suppliers.</p>
+                </div>
+            </div>
+        </section>
+       
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title cyberpunk-header">THE TEAM</h2>
+                <h3 class="section-subtitle cyberpunk-subheader">BEHIND THE SCREEN</h3>
+            </div>
+            <div class="about-content">
+                <div class="logo-mark">
+                    <p>GAV<span class="logo-accent">DEC</span> RECHARGE</p>
+                    <p class="plus">// EST. 2023 // GAMERS FOR GAMERS //</p>
+                </div>
+                <p class="about-text">We're passionate gamers who saw the need for a reliable, fast, and affordable game credit service. What started as a dorm room project between two college friends has grown into the most trusted name in digital gaming credits in the region.</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-photo-container">
+                            <img src="images/zander'.jpg" alt="Zander Luke S. Decena" class="team-photo">
+                            <div class="photo-overlay"></div>
+                        </div>
+                        <h3>FOUNDER & CEO</h3>
+                        <p class="team-name">ZANDER LUKE S. DECENA</p>
+                        <p class="team-title">BSIT - 1</p>
+                        <p class="team-contact">zanderluke.decena@cit.edu</p>
+                        <div class="social-links">
+                            <span class="social-icon">FB</span>
+                            <span class="social-icon">IG</span>
+                            <span class="social-icon">DC</span>
+                        </div>
+                    </div>
+                   
+                    <div class="team-card">
+                        <div class="team-photo-container">
+                            <img src="images/francis.jpg" alt="Francis Benedict B. Gaviola" class="team-photo">
+                            <div class="photo-overlay"></div>
+                        </div>
+                        <h3>CO-FOUNDER & CTO</h3>
+                        <p class="team-name">FRANCIS BENEDICT B. GAVIOLA</p>
+                        <p class="team-title">BSIT - 1</p>
+                        <p class="team-contact">francisbenedict.gaviola@cit.edu</p>
+                        <div class="social-links">
+                            <span class="social-icon">FB</span>
+                            <span class="social-icon">IG</span>
+                            <span class="social-icon">DC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title cyberpunk-header">NEED HELP?</h2>
+                <h3 class="section-subtitle cyberpunk-subheader">WE'RE HERE 24/7</h3>
+            </div>
+           
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>NAME:</label>
+                    <input type="text" required placeholder="ENTER YOUR NAME...">
+                </div>
+                <div class="form-group">
+                    <label>E-MAIL:</label>
+                    <input type="email" required placeholder="ENTER YOUR E-MAIL...">
+                </div>
+                <div class="form-group">
+                    <label>CONCERN TYPE:</label>
+                    <select>
+                        <option>ACCOUNT ISSUE</option>
+                        <option>PAYMENT PROBLEM</option>
+                        <option>DELIVERY QUESTION</option>
+                        <option>OTHER</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE:</label>
+                    <textarea required placeholder="DESCRIBE YOUR ISSUE..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>SCREENSHOT (OPTIONAL):</label>
+                    <input type="file">
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+            </form>
+            
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>EMAIL US</h3>
+                    <p>support@gavdecrecharge.com</p>
+                </div>
+                <div class="info-card">
+                    <h3>CALL US</h3>
+                    <p>+63 912 345 6789</p>
+                </div>
+                <div class="info-card">
+                    <h3>LIVE CHAT</h3>
+                    <p>Available 24/7</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="cyber-footer">
+        <p>© 2023 GAVDEC RECHARGE. ALL RIGHTS RESERVED.</p>
+        <p>ALL GAME IMAGES AND LOGOS ARE PROPERTY OF THEIR RESPECTIVE OWNERS.</p>
+    </footer>
+
+    <script src="finalproj.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+#include <Servo.h>
+
+#define trigPin 9      // Trigger pin for Ultrasonic Sensor (trigger)
+#define echoPin 10     // Echo pin for Ultrasonic Sensor (detect)
+#define servoPin 6     // Pin for Servo Motor
+#define ENA 11         // Enable pin for Motor A
+#define IN1 2          // Input pin 1 for Motor A (positive)
+#define IN2 3          // Input pin 2 for Motor A (negative)
+#define ENB 12         // Enable pin for Motor B
+#define IN3 4          // Input pin 1 for Motor B (positive)
+#define IN4 5          // Input pin 2 for Motor B (negative)
+
+int motorStateA = 0;   // 0 - Motor A is stopped or off state | 1 - Motor A is running or on state
+int motorStateB = 0;   // 0 - Motor B is stopped or off state | 1 - Motor B is running or on state
+unsigned long motorStartTime = 0; // Variable to store the start time of motor operation
+
+Servo myServo;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+
+  myServo.attach(servoPin);
+}
+
+void loop() {
+  long duration, distance;
+
+  // Trigger ultrasonic sensor
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  //Measure distance
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034 / 2;  //formula to get the measurement in centimeters
+
+  //Print bottle distance on the serial monitor
+  Serial.print("Object Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  if (distance >= 1 && distance < 8) {
+    Serial.println("Moving servo to 195 degrees");
+    myServo.write(195);    //Move servo to 180 degrees
+    delay(1000);
+    Serial.println("Moving servo to 0 degrees");
+    myServo.write(0);      //Move servo to 0 degrees
+    delay(10);
+  }
+
+  if (distance >= 1 && distance < 8) {    //object distance between 1-5 cm
+    if (motorStateA == 0 || motorStateB == 0) { 
+      Serial.println("Turning on Motor A & B");
+      motorStateA = 1;
+      digitalWrite(IN1, HIGH);            //HIGH means 1 or on (positive is turned on / motor will run)
+      digitalWrite(IN2, LOW);             //LOW means 0 or off
+      analogWrite(ENA, 150);              //Rotation speed of Motor A
+      motorStateB = 1;
+      digitalWrite(IN3, HIGH);            //HIGH means 1 or on (positive is turned on / motor will run)
+      digitalWrite(IN4, LOW);             //LOW means 0 or off
+      analogWrite(ENB, 150);              //Rotation speed of Motor B
+      motorStartTime = millis();          //Record the start time of motor operation
+    }
+  } else if (millis() - motorStartTime >= 4) {    // If 10 seconds have elapsed
+    Serial.println("Turning off Motor A & B");
+    motorStateA = 0;
+    digitalWrite(IN1, LOW);               //Positive is turned off (stop the motor)
+    digitalWrite(IN2, HIGH); 
+    analogWrite(ENA, 0);                  //Rotation speed is 0 (off)
+    motorStateB = 0;
+    digitalWrite(IN3, LOW);               //Positive is turned off (stop the motor)
+    digitalWrite(IN4, HIGH);
+    analogWrite(ENB, 0);                  //Rotation speed is 0 (off)
+  }
+  delay(250);
+}
